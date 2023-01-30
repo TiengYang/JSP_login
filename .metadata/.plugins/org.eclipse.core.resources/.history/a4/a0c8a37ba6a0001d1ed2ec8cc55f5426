@@ -1,0 +1,106 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table, tr, th, td {
+padding: 5px;
+border: 1px solid black;
+}
+
+table {
+border-collapse: collapse;
+}
+
+th {
+color: white;
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<p><span>Welcome </span>
+   <%= request.getParameter("username")%>
+</p>
+<%
+int[][] score = {
+		{
+			35,70,60,90
+		},
+		{
+			30
+		},
+		{
+			32,70,20
+		}
+};
+
+double[] depPass = new double[3];
+int count = 0;
+
+for(int i = 0; i < score.length; i++){
+	for(int j = 0; j < score[i].length; j++){
+		if(score[i][j] >= 40) {
+			count++;
+		}
+	}
+	System.out.println(count + " " + score[i].length);
+	depPass[i] = (count/score[i].length)*100;
+	count = 0;
+}
+
+System.out.println(depPass[0]);
+
+%>
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Student ID</th>
+    <th>Marks</th>
+    <th>Pass %</th>
+  </tr>
+  <tr>
+    <td rowspan="4" style="text-align: center;">Dep 1</td>
+    <td>S1</td>
+    <td style="text-align:right">35</td>
+    <td rowspan="4" style="text-align: center;"><%= depPass[0]%></td>
+  </tr>
+  <tr>
+    <td>S2</td>
+    <td style="text-align:right">70</td>
+  </tr>
+  <tr>
+    <td>S3</td>
+    <td style="text-align:right">60</td>
+  </tr>
+  <tr>
+    <td>S4</td>
+    <td style="text-align:right">90</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Dep 2</td>
+    <td>S5</td>
+    <td style="text-align:right">30</td>
+    <td style="text-align: center;"><%= depPass[1]%></td>
+  </tr>
+  <tr>
+    <td rowspan="3" style="text-align: center;">Dep 3</td>
+    <td>S6</td>
+    <td style="text-align:right">32</td>
+    <td rowspan="3" style="text-align: center;"><%= depPass[2]%></td>
+  </tr>
+  <tr>
+    <td>S7</td>
+    <td style="text-align:right">70</td>
+  </tr>
+  <tr>
+    <td>S8</td>
+    <td style="text-align:right">20</td>
+  </tr>
+</table>
+
+</body>
+</html>

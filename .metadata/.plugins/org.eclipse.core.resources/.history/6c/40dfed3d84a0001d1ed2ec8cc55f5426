@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<style>
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello</title>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<style>
+p{
+color: red;
+}
+</style>
+</head>
+<body>
+<div style = "border-style: solid; text-align: center; margin: auto; padding: 50px; width: 50%">
+
+<form action="#" onsubmit="Validate()">
+<table class = "center">
+  <tr>
+    <td>User ID: </td>
+    <td><input type="text" id="username" name="username">
+    </td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><p class="usernameError"></p></td>
+  </tr>
+  <tr>
+    <td>Password: </td>
+    <td><input type="password" id="password" name="password"></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><p class="passError"></p></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" name="" value="login"></input></td>
+  </tr>
+</table>
+</form>
+
+
+</div>>
+
+<script type="text/javascript">
+function Validate() {
+	var id = "test123";
+	var password = "password";
+	var name = $("#username").val();
+	var pass = $("#password").val();
+	
+	if(name == ""){
+		$(".usernameError").html("Username cannot be empty");
+	}
+}
+</script>
+</body>
+</html>

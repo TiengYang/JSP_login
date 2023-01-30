@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table, tr, th, td {
+padding: 5px;
+border: 1px solid black;
+}
+
+table {
+border-collapse: collapse;
+}
+
+th {
+color: white;
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<p><span>Welcome </span>
+   <%= request.getParameter("username")%>
+</p>
+<%
+int S1 = 35;
+int S2 = 70;
+int S3 = 60;
+int S4 = 90;
+int S5 = 30;
+int S6 = 32;
+int S7 = 70;
+int S8 = 20;
+
+int total = S1+S2+S3+S4+S5+S6+S7+S8;
+double dep1, dep2, dep3 = 0;
+
+dep1 = ((S1+S2+S3+S4)/total)*100;
+dep2 = (S5/total)*100;
+dep3 = ((S6+S7+S8)/total)*100;
+%>
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Student ID</th>
+    <th>Marks</th>
+    <th>Pass %</th>
+  </tr>
+  <tr>
+    <td rowspan="4" style="text-align: center;">Dep 1</td>
+    <td>S1</td>
+    <td style="text-align:right">35</td>
+    <td rowspan="4" style="text-align: center;"><%= dep1%></td>
+  </tr>
+  <tr>
+    <td>S2</td>
+    <td style="text-align:right">70</td>
+  </tr>
+  <tr>
+    <td>S3</td>
+    <td style="text-align:right">60</td>
+  </tr>
+  <tr>
+    <td>S4</td>
+    <td style="text-align:right">90</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Dep 2</td>
+    <td>S5</td>
+    <td style="text-align:right">30</td>
+    <td style="text-align: center;"><%= dep2%></td>
+  </tr>
+  <tr>
+    <td rowspan="3" style="text-align: center;">Dep 3</td>
+    <td>S6</td>
+    <td style="text-align:right">32</td>
+    <td rowspan="3" style="text-align: center;"><%= dep3%></td>
+  </tr>
+  <tr>
+    <td>S7</td>
+    <td style="text-align:right">70</td>
+  </tr>
+  <tr>
+    <td>S8</td>
+    <td style="text-align:right">20</td>
+  </tr>
+</table>
+
+</body>
+</html>
